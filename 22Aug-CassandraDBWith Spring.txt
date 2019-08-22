@@ -1,0 +1,45 @@
+                                                                    CASSANDRA
+Components:
+-Node:Place where data is stored.
+-Data center :collection of related nodes.
+-Cluster:component containing one or more data centers
+
+CQL(Cassandra Query Language)
+-Access Cassandra through its nodes.
+-CQL treats database (keyspace) as container of tables
+
+                                                                 Installation and CONFIGURATION
+
+-Download apache-cassandra-3.0.18-bin
+-Set environment system variable CASSANDRA_HOME as C:\verizon sw\apache-cassandra-3.0.18-bin\apache-cassandra-3.0.18
+-Set Path variable at starting as %JAVA_HOME%\BIN
+-Download python-3.6.0
+-Go to cmd and cd C:\verizon sw\apache-cassandra-3.0.18-bin\apache-cassandra-3.0.18 ->then cassandra ->Enter
+-Go to C:\verizon sw\apache-cassandra-3.0.18-bin\apache-cassandra-3.0.18\bin and run 'cqlsh'
+
+-In cqlsh
+	-create keyspace phoenstore with replication={'class':'SimpleStrategy','replication_factor':3};
+	-desc phonestore;
+	- use phoenstore;
+	- create table catlog(id int,catlog_name text,validity text, amount double,PRIMARY KEY(id));
+	-select * from catlog;
+	-insert into catlog(id,catlog_name,validity,amount) values(700,'mobile-post','90 days',600);
+	-select * from catlog where id =700;
+	-select * from catlog where validity='90 days' allow filtering;
+	-update catlog set validity ='45 days' where id=900;
+	-delete from catalog where id=700;
+
+-New Spring Project 'cassandraUsingRepo'->Lombok,Spring Data for Apache Cassandra,Spring Boot Actuator,Spring Web starter,Rest repositories
+
+
+
+
+
+
+
+
+
+
+                                                                  SRING TESTING
+
+
